@@ -4,9 +4,12 @@
   "description": "curso node.js de escalab",
   "main": "src/index.js",
   "scripts": {
-    "service": "node src/index.js"
-    
+    "service": "node src/index.js",
+    "http": "nodemon src/httpExample/index.js"
   },
   "author": "Isisag",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
