@@ -3,10 +3,9 @@ const PORT = "5050";
 
 // metodo para crear un servidor | recibe un callback con request y response
 const server = http.createServer((req, res) => {
+
   console.log("method", req.method); // entrega el metodo para llamar al server
   console.log("URL", req.url); //url de la cual se llama el sv
-
-
 
     res.setHeader('Content-Type', "application/json")
     res.writeHead(200)
@@ -16,9 +15,6 @@ const server = http.createServer((req, res) => {
         message2: `You have use a ${req.method} method`,
         url: req.url
     }));
-  
-
-  
 
 });
 

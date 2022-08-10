@@ -12,5 +12,9 @@ cambios-mayores . cambios-menores . bugs-pequeños
 #### package-lock
 dependencias con versiones 
 
-#### 
+####  -r 
+argumento -r 
+-r dotenv/config 
+para implementar la dependencia dotenv 
+
 
