@@ -1,4 +1,37 @@
-Get http://localhost:5050/
+GET http://localhost:5050/
 
 ###
 POST http://localhost:5050/
+
+### 
+GET http://localhost:5050/user
+
+###
+POST http://localhost:5050/user
+Content-Type: application/json
+
+{
+    "name": "Anthony luquiño",
+    "email": "anthony@gmail.com"
+}
+
+###
+POST http://localhost:5050/user
+Content-Type: application/json
+
+{
+    "name": "Ruben",
+    "email": "ruben@gmail.com"
+}
+
+### 
+DELETE http://localhost:5050/user/03Y4XBD89O39aBl03HenS
+
+###
+PATCH  http://localhost:5050/user/KrVY9OCHNFHn-CogN_MmB
+Content-Type: application/json
+
+{
+    "name": "Anthony luquiño EDITADO",
+    "email": "anthony@gmail.com"
+}
