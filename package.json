@@ -16,6 +16,8 @@
     "nodemon": "^2.0.19"
   },
   "dependencies": {
+    "http-errors": "^2.0.0",
+    "mongoose": "^6.5.2",
     "morgan": "^1.10.0",
     "nanoid": "^3.0.0"
   }

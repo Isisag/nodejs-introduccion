@@ -17,6 +17,7 @@ argumento -r
 -r dotenv/config 
 para implementar la dependencia dotenv 
 
+# CLASE 2
 
 ### Metodos HTTP
 
@@ -34,7 +35,6 @@ para implementar la dependencia dotenv
 - #### update - put,patch
 - #### delete - delete
 
-
 Autenticacion Y Autentificacion
 autorización = permisos, autenticación = identidad
 
@@ -42,3 +42,20 @@ autorización = permisos, autenticación = identidad
 N - NETWORK
 B - BUSINESS
 D - DATA
+
+# CLASE 3 
+
+### Mongo db
+base de datos basada en documentos - Documentos json
+
+Los documentos se llaman
+**Javascript : JSON | Mongo: BSON**
+
+Se manejan los datos de manera eriquecida (de manera binaria)
+
+Se deben traducir de JSON a BSON 
+_es el equivalente a usar un hashmap en Java_
+
+### NODE_ENV 
+
+= local | = dev | 

@@ -1,37 +1,53 @@
 GET http://localhost:5050/
 
-###
-POST http://localhost:5050/
-
 ### 
-GET http://localhost:5050/user
+GET http://localhost:5055/user
 
 ###
-POST http://localhost:5050/user
+POST http://localhost:5055/user
 Content-Type: application/json
 
 {
-    "name": "Anthony luquiño",
-    "email": "anthony@gmail.com"
+    "name": "Sofia",
+    "lastName": "Aguilar",
+    "email": "sofiaguilar@gmail.com"
 }
 
 ###
-POST http://localhost:5050/user
+POST http://localhost:5055/user
 Content-Type: application/json
 
 {
-    "name": "Ruben",
-    "email": "ruben@gmail.com"
+    "name": "Hernan lopez",
+    "email": "hernan@gmail.com"
 }
 
 ### 
-DELETE http://localhost:5050/user/03Y4XBD89O39aBl03HenS
+DELETE http://localhost:5055/user/03Y4XBD89O39aBl03HenS
 
 ###
-PATCH  http://localhost:5050/user/KrVY9OCHNFHn-CogN_MmB
+PATCH  http://localhost:5055/user/NbckVSixLkCP6V8fMw4vy
 Content-Type: application/json
 
 {
     "name": "Anthony luquiño EDITADO",
     "email": "anthony@gmail.com"
 }
+
+###
+GET http://localhost:5055/articles
+
+###
+GET http://localhost:5055/user/GAGfpK8pm6093fOr_YELg/articles
+
+
+### Save an URL
+POST http://localhost:5055/url/1gG8-A
+Content-Type: : application/json
+
+{
+    "link": "https://www.purina-latam.com/mx/dogchow/mi-cachorro/los-mejores-juegos-de-perritos-cachorros-por-mes-de-edad"
+}
+
+###
+GET http://localhost:5055/url/WeYcg-
