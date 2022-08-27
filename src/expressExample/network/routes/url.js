@@ -4,7 +4,7 @@ const { UrlService } = require('../../service')
 const response = require('./response')
 
 const urlRouter = Router();
-urlRouter.route('/url/:userId').post( async (req, res) => {
+urlRouter.route('/url/:userId').post( async (req, res, next) => {
 
     const { body: { link }, params:{ userId } } = req
     const urlService = new UrlService({link, userId})
@@ -20,14 +20,13 @@ urlRouter.route('/url/:userId').post( async (req, res) => {
         })    
         
     } catch (error) {
-        console.log(error)
-        response({error, message: 'no se pudo insertar la url',res, status:500 })    
+      next(error)    
     }
 
   })
 
 urlRouter.route('/url/:id')
-.get(async (  req , res)=>{
+.get(async (  req , res, next )=>{
   const { params:{ id } } = req;
   const urlService = new UrlService({id})
   
@@ -38,8 +37,7 @@ urlRouter.route('/url/:id')
 
     console.log('url', url)
   } catch (error) {
-    console.log(error)
-    response({message: "Internal server error", res})
+    next(error)
   }
 })
 

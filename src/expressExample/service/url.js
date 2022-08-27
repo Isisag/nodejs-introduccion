@@ -1,7 +1,8 @@
 const UserService = require('./user')
 const { nanoid } = require('nanoid');
-const { mongo:{ queries } }  = require('../database');
-const { url: { saveUrl, getOneUrl } } = queries
+const httpErrors = require('http-errors')
+const { mongo: { queries } } = require('../database')
+const { url: { getOneUrl }} = queries
 
 class UrlService {
 
@@ -19,7 +20,7 @@ class UrlService {
 
     async saveUrl(){
         if(!this.#userId)
-            throw new Error('Missing userId')
+            throw new httpErrors.NotFound('user was not found')
 
 
         const userService = new UserService(this.#userId)
@@ -41,13 +42,13 @@ class UrlService {
     async getOneUrl(){
 
         if(!this.#id){
-            throw new Error('Missing id ')
+            throw new httpErrors.BadRequest('Missing id ')
         }
 
         const foundUrl = await getOneUrl(this.#id)
 
         if(!foundUrl){
-            throw new Error('Url not found')
+            throw new httpErrors.NotFound('Url not found')
         }
 
         return foundUrl;

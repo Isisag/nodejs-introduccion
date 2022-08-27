@@ -1,10 +1,10 @@
 GET http://localhost:5050/
 
 ### 
-GET http://localhost:5055/user
+GET http://localhost:5055/api/user
 
 ###
-POST http://localhost:5055/user
+POST http://localhost:5055/api/user
 Content-Type: application/json
 
 {
@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:5055/user
+POST http://localhost:5055/api/user
 Content-Type: application/json
 
 {
@@ -23,10 +23,10 @@ Content-Type: application/json
 }
 
 ### 
-DELETE http://localhost:5055/user/03Y4XBD89O39aBl03HenS
+DELETE http://localhost:5055/api/user/03Y4XBD89O39aBl03HenS
 
 ###
-PATCH  http://localhost:5055/user/NbckVSixLkCP6V8fMw4vy
+PATCH  http://localhost:5055/api/user/NbckVSixLkCP6V8fMw4vy
 Content-Type: application/json
 
 {
@@ -35,14 +35,14 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5055/articles
+GET http://localhost:5055/api/articles
 
 ###
-GET http://localhost:5055/user/GAGfpK8pm6093fOr_YELg/articles
+GET http://localhost:5055/api/user/GAGfpK8pm6093fOr_YELg/articles
 
 
 ### Save an URL
-POST http://localhost:5055/url/1gG8-A
+POST http://localhost:5055/api/url/1gG8-A
 Content-Type: : application/json
 
 {
@@ -50,4 +50,7 @@ Content-Type: : application/json
 }
 
 ###
-GET http://localhost:5055/url/WeYcg-
+GET http://localhost:5055/api/url/WeYcg-
+
+###
+GET http://localhost:5055/api/error404

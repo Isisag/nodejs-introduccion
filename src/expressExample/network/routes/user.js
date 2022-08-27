@@ -12,17 +12,16 @@ const userRouter = Router();
 const { user: {getAllUsers} } = queries
 
 userRouter.route("/user")  
-.get( async (req, res, ) => {
+.get( async (req, res, next) => {
     try {
     await getAllUsers()
     response({error:false, message: await getAllUsers(), res, status: 200})
 
     } catch (error) {
-      console.log(error)
-      response({error, message: 'Internal server error', res, status: 500})
+      next(error)
     }
 })
-.post( async (req, res) => {
+.post( async (req, res, next) => {
   try {
         const { body: { name, lastName, email } } = req;
          await saveUser({
@@ -34,36 +33,33 @@ userRouter.route("/user")
       response({error:false, message: await getAllUsers(), res, status: 201})
 
       } catch (error) {
-        console.log(error)
-        response({error, message: 'Internal server error', res, status: 500})
+        next(error)
       }
 })
 
 userRouter.route("/user/:id")
-.get( async (req,res) => {
+.get( async (req,res, next) => {
   try {
     const { body: { id }} = req
     await getOneUser(id)
   } catch (error) {
-    console.log(error)
-    response({error, message: 'Internal server error', res, status: 500})
+      next(error)
   }
 })
-.delete( async (req , res) => {
+.delete( async (req , res, next) => {
   const { params:{ id } } = req;
   try {
     await removeOneUser(id)
     response({error:false, message: users,res, status:200 })
     
   } catch (error) {
-    console.log(error)
-    response({error, message: 'Internal server error', res, status: 500})
+    next(error)
 
   }
 
 
 })
-.patch( async (req,res) => {
+.patch( async (req,res, next ) => {
   const { body:{ name, lastName, email }, 
   params:{ id } } = req;
 
@@ -78,8 +74,7 @@ userRouter.route("/user/:id")
   response({error:false, message: users,res, status:200 })
     
   } catch (error) {
-    console.log(error)
-    response({error, message: 'Internal server error', res, status: 500})
+    next(error)
   }
   
 })
